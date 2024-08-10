@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Recursion {
+class RecurEQues {
 
     //1) Value from 5 to 1
     // public static void printNum(int n) {

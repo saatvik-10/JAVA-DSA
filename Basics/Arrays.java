@@ -3,7 +3,7 @@ import java.util.*;
 class Arrays {
 
     public static void main(String args[]) {
-        int[] marks = new int[3];
+        int[] marks = new int[3]; //delcaring the size
 
         Scanner sc = new Scanner(System.in);
         int size = sc.nextInt();
