@@ -22,7 +22,7 @@ class Quick {
                 arr[j] = temp;
             }
         }
-        int temp = arr[low];
+        int temp = arr[low]; //swapping pivot with the last element of the left index
         arr[low] = arr[j];
         arr[j] = temp;
 
