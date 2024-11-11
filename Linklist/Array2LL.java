@@ -31,5 +31,12 @@ public class Array2LL {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArr2LL(arr);
         System.out.println(head.data);
+
+        //traversal
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
     }
 }
