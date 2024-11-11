@@ -14,7 +14,7 @@ class Node {
     }
 }
 
-public class LinkedList {
+public class LinkedListBasic {
 
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
