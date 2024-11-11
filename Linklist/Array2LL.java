@@ -38,6 +38,15 @@ public class Array2LL {
         return count;
     }
 
+    private static int checkIfPresent(Node head, int val) {
+        Node temp = head;
+        while (temp != null) {
+            if (temp.data == val) return 1;
+            temp = temp.next;
+        }
+        return 0;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArr2LL(arr);
@@ -52,5 +61,8 @@ public class Array2LL {
 
         //length
         System.out.println(lengthOfLL(head));
+
+        //check for the value if present
+        System.out.println(checkIfPresent(head, 30));
     }
 }
