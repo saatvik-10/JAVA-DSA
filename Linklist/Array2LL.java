@@ -27,6 +27,17 @@ public class Array2LL {
         return head;
     }
 
+    private static int lengthOfLL(Node head) {
+        int count = 0;
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+            count++;
+        }
+        return count;
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArr2LL(arr);
@@ -38,5 +49,8 @@ public class Array2LL {
             System.out.println(temp.data);
             temp = temp.next;
         }
+
+        //length
+        System.out.println(lengthOfLL(head));
     }
 }
