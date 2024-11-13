@@ -116,31 +116,32 @@ public class Array2LL {
         Node head = convertArr2LL(arr);
 
         //deleting head
-        // head = removeHead(head);
-        // print(head);
+        head = removeHead(head);
+        print(head);
 
-        // //deleting tail
-        // head = removeTail(head);
-        // print(head);
+        //deleting tail
+        head = removeTail(head);
+        print(head);
 
-        // //deleting element at Kth position
-        // head = removeK(head, 4);
-        // print(head);
+        //deleting element at Kth position
+        head = removeK(head, 4);
+        print(head);
 
         //deleting element at Kth position
         head = removeVal(head, 8);
         print(head);
-        // //traversal
-        // Node temp = head;
-        // while (temp != null) {
-        //     System.out.println(temp.data);
-        //     temp = temp.next;
-        // }
 
-        // //length
-        // System.out.println(lengthOfLL(head));
+        //traversal
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
 
-        // //check for the value if present
-        // System.out.println(checkIfPresent(head, 30));
+        //length
+        System.out.println(lengthOfLL(head));
+
+        //check for the value if present
+        System.out.println(checkIfPresent(head, 30));
     }
 }
