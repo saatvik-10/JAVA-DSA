@@ -38,12 +38,6 @@ public class Array2LL {
         return count;
     }
 
-    private static Node removeHead(Node head) {
-        if (head == null) return head;
-        head = head.next;
-        return head;
-    }
-
     private static int checkIfPresent(Node head, int val) {
         Node temp = head;
         while (temp != null) {
@@ -51,6 +45,22 @@ public class Array2LL {
             temp = temp.next;
         }
         return 0;
+    }
+
+    private static Node removeHead(Node head) {
+        if (head == null) return head;
+        head = head.next;
+        return head;
+    }
+
+    private static Node removeTail(Node head) {
+        if (head == null || head.next == null) return null;
+        Node temp = head;
+        while (temp.next.next != null) {
+            temp = temp.next;
+        }
+        temp.next = null;
+        return head;
     }
 
     private static void print(Node head) {
@@ -64,22 +74,24 @@ public class Array2LL {
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArr2LL(arr);
-
         //deleting head
-        head = removeHead(head);
+        // head = removeHead(head);
+        // print(head);
+
+        //deleting tail
+        head = removeTail(head);
         print(head);
-
         //traversal
-        Node temp = head;
-        while (temp != null) {
-            System.out.println(temp.data);
-            temp = temp.next;
-        }
+        // Node temp = head;
+        // while (temp != null) {
+        //     System.out.println(temp.data);
+        //     temp = temp.next;
+        // }
 
-        //length
-        System.out.println(lengthOfLL(head));
+        // //length
+        // System.out.println(lengthOfLL(head));
 
-        //check for the value if present
-        System.out.println(checkIfPresent(head, 30));
+        // //check for the value if present
+        // System.out.println(checkIfPresent(head, 30));
     }
 }
