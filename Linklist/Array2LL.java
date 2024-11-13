@@ -63,6 +63,27 @@ public class Array2LL {
         return head;
     }
 
+    private static Node removeK(Node head, int K) {
+        if (head == null) return head;
+        if (K == 1) {
+            head = head.next;
+            return head;
+        }
+        int count = 0;
+        Node temp = head;
+        Node prev = null;
+        while (temp != null) {
+            count++;
+            if (count == K) {
+                prev.next = prev.next.next;
+                break;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
+
     private static void print(Node head) {
         while (head != null) {
             System.out.println(head.data + " ");
@@ -74,14 +95,19 @@ public class Array2LL {
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArr2LL(arr);
+
         //deleting head
         // head = removeHead(head);
         // print(head);
 
-        //deleting tail
-        head = removeTail(head);
+        // //deleting tail
+        // head = removeTail(head);
+        // print(head);
+
+        //deleting element at Kth position
+        head = removeK(head, 4);
         print(head);
-        //traversal
+        // //traversal
         // Node temp = head;
         // while (temp != null) {
         //     System.out.println(temp.data);
