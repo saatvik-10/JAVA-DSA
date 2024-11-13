@@ -38,6 +38,12 @@ public class Array2LL {
         return count;
     }
 
+    private static Node removeHead(Node head) {
+        if (head == null) return head;
+        head = head.next;
+        return head;
+    }
+
     private static int checkIfPresent(Node head, int val) {
         Node temp = head;
         while (temp != null) {
@@ -47,10 +53,21 @@ public class Array2LL {
         return 0;
     }
 
+    private static void print(Node head) {
+        while (head != null) {
+            System.out.println(head.data + " ");
+            head = head.next;
+        }
+        System.out.println();
+    }
+
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 4, 5 };
         Node head = convertArr2LL(arr);
-        System.out.println(head.data);
+
+        //deleting head
+        head = removeHead(head);
+        print(head);
 
         //traversal
         Node temp = head;
