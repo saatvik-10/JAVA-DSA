@@ -106,8 +106,19 @@ public class Array2LL {
 
     //INSERTION
     private static Node insertHead(Node head, int val) {
-        Node temp = new Node(head, val);
+        Node temp = new Node(val, head);
         return temp;
+    }
+
+    private static Node insertTail(Node head, int val) {
+        if (head == null) return new Node(val);
+        Node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        Node newNode = new Node(val);
+        temp.next = newNode;
+        return head;
     }
 
     private static void print(Node head) {
@@ -139,7 +150,11 @@ public class Array2LL {
         // print(head);
 
         //inserting head
-        head = insertHead(head, 0);
+        // head = insertHead(head, 0);
+        // print(head);
+
+        //insertion tail
+        head = insertTail(head, 9);
         print(head);
         //traversal
         // Node temp = head;
