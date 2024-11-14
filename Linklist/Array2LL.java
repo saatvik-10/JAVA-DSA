@@ -140,6 +140,25 @@ public class Array2LL {
         return head;
     }
 
+    private static Node insertVal(Node head, int el, int val) {
+        if (head == null) {
+            return null;
+        }
+        if (head.data == val) {
+            return new Node(el, head);
+        }
+        Node temp = head;
+        while (temp.next != null) {
+            if (temp.next.data == val) {
+                Node newNode = new Node(el, temp.next);
+                temp.next = newNode;
+                break;
+            }
+            temp = temp.next;
+        }
+        return head;
+    }
+
     private static void print(Node head) {
         while (head != null) {
             System.out.println(head.data + " ");
@@ -176,8 +195,12 @@ public class Array2LL {
         // head = insertTail(head, 9);
         // print(head);
 
-        //inserting and kth position
-        head = insertK(head, 10, 3);
+        // //inserting at kth position
+        // head = insertK(head, 10, 3);
+        // print(head);
+
+        //inserting element before kth element
+        head = insertVal(head, 10, 4);
         print(head);
         //traversal
         // Node temp = head;
