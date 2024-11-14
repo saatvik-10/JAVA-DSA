@@ -171,48 +171,49 @@ public class Array2LL {
         int[] arr = { 1, 2, 3, 4, 5, 8 };
         Node head = convertArr2LL(arr);
 
-        // //deleting head
-        // head = removeHead(head);
-        // print(head);
+        //deleting head
+        head = removeHead(head);
+        print(head);
 
-        // //deleting tail
-        // head = removeTail(head);
-        // print(head);
+        //deleting tail
+        head = removeTail(head);
+        print(head);
 
-        // //deleting element at Kth position
-        // head = removeK(head, 4);
-        // print(head);
+        //deleting element at Kth position
+        head = removeK(head, 4);
+        print(head);
 
-        // //deleting element at Kth position
-        // head = removeVal(head, 8);
-        // print(head);
+        //deleting element at Kth position
+        head = removeVal(head, 8);
+        print(head);
 
         //inserting head
-        // head = insertHead(head, 0);
-        // print(head);
+        head = insertHead(head, 0);
+        print(head);
 
         //insertion tail
-        // head = insertTail(head, 9);
-        // print(head);
+        head = insertTail(head, 9);
+        print(head);
 
-        // //inserting at kth position
-        // head = insertK(head, 10, 3);
-        // print(head);
+        //inserting at kth position
+        head = insertK(head, 10, 3);
+        print(head);
 
         //inserting element before kth element
         head = insertVal(head, 10, 4);
         print(head);
+
         //traversal
-        // Node temp = head;
-        // while (temp != null) {
-        //     System.out.println(temp.data);
-        //     temp = temp.next;
-        // }
+        Node temp = head;
+        while (temp != null) {
+            System.out.println(temp.data);
+            temp = temp.next;
+        }
 
-        // //length
-        // System.out.println(lengthOfLL(head));
+        //length
+        System.out.println(lengthOfLL(head));
 
-        // //check for the value if present
-        // System.out.println(checkIfPresent(head, 30));
+        //check for the value if present
+        System.out.println(checkIfPresent(head, 30));
     }
 }
