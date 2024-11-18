@@ -53,6 +53,40 @@ public class Basic {
         return head;
     }
 
+    private static Node removeK(Node head, int K) {
+        if (head == null) return null;
+
+        Node temp = head;
+        int count = 0;
+
+        while (temp != null) {
+            count++;
+            if (count == K) {
+                break;
+            } else {
+                temp = temp.next;
+            }
+        }
+
+        Node prev = temp.back;
+        Node front = temp.next;
+
+        if (prev == null && front == null) {
+            return null;
+        } else if (prev == null) {
+            return removeHead(head);
+        } else if (front == null) {
+            return removeTail(head);
+        } else if (prev != null && front != null) {
+            prev.next = front;
+            front.back = prev;
+            temp.next = null;
+            temp.back = null;
+        }
+
+        return head;
+    }
+
     private static void print(Node head) {
         while (head != null) {
             System.out.print(head.data + " ");
@@ -71,6 +105,10 @@ public class Basic {
 
         //deletion of tail
         head = removeTail(head);
+        print(head);
+
+        // deletion of element at kth position
+        head = removeK(head, 1);
         print(head);
     }
 }
