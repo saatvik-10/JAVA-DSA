@@ -40,6 +40,19 @@ public class Basic {
         return head;
     }
 
+    private static Node removeTail(Node head) {
+        if (head == null || head.next == null) return null;
+        Node tail = head;
+        while (tail.next != null) {
+            tail = tail.next;
+        }
+        Node prev = tail.back;
+        prev.next = null;
+        tail.back = null;
+
+        return head;
+    }
+
     private static void print(Node head) {
         while (head != null) {
             System.out.print(head.data + " ");
@@ -50,10 +63,14 @@ public class Basic {
     public static void main(String[] args) {
         int[] arr = { 12, 5, 8, 7 };
         Node head = convertArr2DLL(arr);
-        // print(head);
+        print(head);
 
         //deletion of head
         head = removeHead(head);
+        print(head);
+
+        //deletion of tail
+        head = removeTail(head);
         print(head);
     }
 }
