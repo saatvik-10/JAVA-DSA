@@ -111,19 +111,19 @@ public class Basic {
     public static void main(String[] args) {
         int[] arr = { 12, 5, 8, 7 };
         Node head = convertArr2DLL(arr);
-        // print(head);
+        print(head);
 
-        // //deletion of head
-        // head = removeHead(head);
-        // print(head);
+        //deletion of head
+        head = removeHead(head);
+        print(head);
 
-        // //deletion of tail
-        // head = removeTail(head);
-        // print(head);
+        //deletion of tail
+        head = removeTail(head);
+        print(head);
 
-        // // deletion of element at kth position
-        // head = removeK(head, 1);
-        // print(head);
+        // deletion of element at kth position
+        head = removeK(head, 1);
+        print(head);
 
         //deletion of an element
         removeVal(head.next);
