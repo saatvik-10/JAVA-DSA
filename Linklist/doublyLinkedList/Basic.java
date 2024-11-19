@@ -87,6 +87,7 @@ public class Basic {
     }
 
     private static void removeVal(Node head) {
+        //No deletion of head bcz of more and more conditions then...
         Node prev = head.back;
         Node front = head.next;
 
