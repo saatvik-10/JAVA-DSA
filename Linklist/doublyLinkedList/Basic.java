@@ -110,6 +110,48 @@ public class Basic {
         return newHead;
     }
 
+    private static Node insertB4Tail(Node head, int val) {
+        Node temp = head;
+
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+
+        Node prev = temp.back;
+        Node newPrevTail = new Node(val);
+        prev.next = newPrevTail;
+        newPrevTail.next = temp;
+        temp.back = newPrevTail;
+
+        return head;
+    }
+
+    private static Node insertB4K(Node head, int val, int K) {
+        Node temp = head;
+
+        if (K == 1) {
+            return insertHeadB4(head, val);
+        }
+
+        int count = 0;
+        while (temp != null) {
+            count++;
+            if (count == K) {
+                break;
+            } else {
+                temp = temp.next;
+            }
+        }
+
+        Node newVal = new Node(val);
+        Node prev = temp.back;
+        prev.next = newVal;
+        newVal.next = temp;
+        temp.back = newVal;
+
+        return head;
+    }
+
     private static void print(Node head) {
         while (head != null) {
             System.out.print(head.data + " ");
@@ -138,8 +180,16 @@ public class Basic {
         removeVal(head.next);
         print(head);
 
-        insertion of new head
+        // insertion of new head
         head = insertHeadB4(head, 10);
+        print(head);
+
+        //insertion of element b4 tail
+        head = insertB4Tail(head, 15);
+        print(head);
+
+        //insert b4 kth element
+        head = insertB4K(head, 10, 3);
         print(head);
     }
 }
