@@ -83,8 +83,22 @@ public class Basic {
             temp.next = null;
             temp.back = null;
         }
-
         return head;
+    }
+
+    private static void removeVal(Node head) {
+        Node prev = head.back;
+        Node front = head.next;
+
+        if (front == null) {
+            prev.next = null;
+            head.back = null;
+        }
+        //basic condition
+        prev.next = front;
+        front.back = prev;
+        head.next = null;
+        head.back = null;
     }
 
     private static void print(Node head) {
@@ -97,18 +111,22 @@ public class Basic {
     public static void main(String[] args) {
         int[] arr = { 12, 5, 8, 7 };
         Node head = convertArr2DLL(arr);
-        print(head);
+        // print(head);
 
-        //deletion of head
-        head = removeHead(head);
-        print(head);
+        // //deletion of head
+        // head = removeHead(head);
+        // print(head);
 
-        //deletion of tail
-        head = removeTail(head);
-        print(head);
+        // //deletion of tail
+        // head = removeTail(head);
+        // print(head);
 
-        // deletion of element at kth position
-        head = removeK(head, 1);
+        // // deletion of element at kth position
+        // head = removeK(head, 1);
+        // print(head);
+
+        //deletion of an element
+        removeVal(head.next);
         print(head);
     }
 }
