@@ -152,6 +152,15 @@ public class Basic {
         return head;
     }
 
+    private static void insertB4Val(Node node, int val) {
+        //no insertion of value b4 head, we will not change the head
+        Node prev = node.back;
+
+        Node newNode = new Node(val, node, prev);
+        prev.next = newNode;
+        newNode.next = node;
+    }
+
     private static void print(Node head) {
         while (head != null) {
             System.out.print(head.data + " ");
@@ -190,6 +199,10 @@ public class Basic {
 
         //insert b4 kth element
         head = insertB4K(head, 10, 3);
+        print(head);
+
+        //insertion of val b4 element
+        insertB4Val(head.next, 10);
         print(head);
     }
 }
