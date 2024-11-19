@@ -30,6 +30,7 @@ public class Basic {
         return head;
     }
 
+    //DELETIONS
     private static Node removeHead(Node head) {
         if (head == null || head.next == null) return null;
         Node prev = head;
@@ -102,6 +103,13 @@ public class Basic {
         head.back = null;
     }
 
+    //INSERTIONS
+    private static Node insertHeadB4(Node head, int val) {
+        Node newHead = new Node(val, head, null); //(value to insert, next, prev)
+        head.back = newHead;
+        return newHead;
+    }
+
     private static void print(Node head) {
         while (head != null) {
             System.out.print(head.data + " ");
@@ -128,6 +136,10 @@ public class Basic {
 
         //deletion of an element
         removeVal(head.next);
+        print(head);
+
+        insertion of new head
+        head = insertHeadB4(head, 10);
         print(head);
     }
 }
